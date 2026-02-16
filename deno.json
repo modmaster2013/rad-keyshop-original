@@ -1,0 +1,41 @@
+{
+  "name": "rad-keyshop",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "tasks": {
+    "start": "deno run -A server.ts",
+    "dev": "deno run -A --watch server.ts",
+    "seed": "deno run -A seed.ts",
+    "deploy": "deployctl deploy server.ts"
+  },
+  "imports": {
+    "@oak/oak": "jsr:@oak/oak@^17.1.5",
+    "stripe": "https://esm.sh/stripe@^18.3.0",
+    "mongodb": "npm:mongodb@^6.3.0",
+    "dotenv": "https://deno.land/x/dotenv@v3.2.2/mod.ts",
+    "bcrypt": "https://deno.land/x/bcrypt@v0.4.1/mod.ts",
+    "nodemailer": "https://esm.sh/nodemailer@^7.0.4"
+  },
+  "compilerOptions": {
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  },
+  "fmt": {
+    "files": {
+      "include": ["**/*.ts", "**/*.js"]
+    },
+    "options": {
+      "useTabs": false,
+      "lineWidth": 80,
+      "indentWidth": 2,
+      "semiColons": true,
+      "singleQuote": true,
+      "proseWrap": "preserve"
+    }
+  }
+} 
